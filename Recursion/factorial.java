@@ -4,7 +4,7 @@ public class factorial {
 
     public static long factorial(long n){
         if (n==0){
-            return 1 ;
+            return 1;
         }
         long ans = n*factorial(n-1);
         return ans;

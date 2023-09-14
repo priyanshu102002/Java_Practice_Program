@@ -1,24 +1,23 @@
 import java.util.Scanner;
+
 public class reverseArray {
-    
-    public static void reverse(int[] arr){
-        int l = arr.length;
 
-        // for(int i = l-1; i>=0 ;i--){
-        //     System.out.print(arr[i]+" ");
-        // }
+    public static void reverse(int[] arr) {
 
-        int[] ans = new int[l];
-        int j = 0;
-        
-        // Inserting numbers in ans array
-        for(int i = l-1; i>=0 ; i--){
-            ans[j++] = arr[i];
+        int l = 0;
+        int r = arr.length - 1;
+
+        while (l<r) {
+            int temp = arr[l];
+            arr[l] = arr[r];
+            arr[r] = temp;
+
+            l++;
+            r--;
         }
-        
-        // To Print reversed array
-        for(int i = 0 ; i<l ; i++){
-            System.out.print(ans[i]+" ");
+
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
 
     }
@@ -29,11 +28,13 @@ public class reverseArray {
         int n = sc.nextInt();
         int[] arr = new int[n];
 
-        System.out.println("Enter "+n+" element : ");
-        for(int i = 0 ; i<n ; i++){
+        System.out.println("Enter " + n + " element : ");
+        for (int i = 0; i < n; i++) {
             arr[i] = sc.nextInt();
         }
 
-        reverse(arr); 
+        reverse(arr);
+
+        
     }
 }
